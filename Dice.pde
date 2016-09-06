@@ -1,10 +1,15 @@
+Dice Lucky1;
+
 void setup()
 {
+	size(300,300);
 	noLoop();
 }
 void draw()
 {
 	//your code here
+	Lucky1 = new Dice(150,150);
+
 }
 void mousePressed()
 {
