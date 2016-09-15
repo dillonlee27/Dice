@@ -8,6 +8,7 @@ void setup()
 void draw()
 {
 	background(0,0,0);
+	//int sum = 0;
 	for(int x =25; x <= 450; x = x + 80)
 	{
 		for(int y = 50; y <= 450; y = y + 70)
@@ -15,7 +16,12 @@ void draw()
 			Die theDie = new Die(x,y);
 			theDie.roll();
 			theDie.show();
+				// if(theDie.value <= 6)
+				// {
+				// 	sum = sum + theDie.value;
+				// }
 		}
+		
 	}
 }
 
@@ -47,6 +53,7 @@ class Die //models one single dice cube
 		fill(255,0,0);
 		rect(myX,myY,50,50,7);
 		fill(0);
+		//text
 		if(dotNumber == 1)
 		{
 			fill(255,255,255);
