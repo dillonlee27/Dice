@@ -8,7 +8,7 @@ void setup()
 void draw()
 {
 	background(0,0,0);
-	//int sum = 0;
+	int sum = 0;
 	for(int x =25; x <= 450; x = x + 80)
 	{
 		for(int y = 50; y <= 450; y = y + 70)
@@ -16,13 +16,15 @@ void draw()
 			Die theDie = new Die(x,y);
 			theDie.roll();
 			theDie.show();
-				// if(theDie.value <= 6)
-				// {
-				// 	sum = sum + theDie.value;
-				// }
+				  if(theDie.dotNumber <= 6)
+				  {
+				  	sum = sum + theDie.dotNumber;
+				  }
 		}
-		
 	}
+			fill(255);
+			textSize(25);
+			text("Total: " + sum, 188,480);	
 }
 
 void mousePressed()
@@ -30,12 +32,11 @@ void mousePressed()
 	redraw();
 }
 
-class Die //models one single dice cube
+class Die 
 {
 	int myX, myY, dotNumber;
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
 		myX = x;
 		myY = y;
 		roll();
@@ -50,31 +51,30 @@ class Die //models one single dice cube
 	void show()
 	{
 		noStroke();
-		fill(255,0,0);
+		fill(int(random(256)), int(random(256)), int(random(256)));
 		rect(myX,myY,50,50,7);
 		fill(0);
-		//text
 		if(dotNumber == 1)
 		{
-			fill(255,255,255);
+			fill(int(random(256)), int(random(256)), int(random(256)));
 			ellipse(myX+25,myY+25,10,10);
 		}
 		else if (dotNumber == 2)
 		{
-		 	fill(255,255,255);
+		 	fill(int(random(256)), int(random(256)), int(random(256)));
 		 	ellipse(myX+25,myY+15,10,10);
 		 	ellipse(myX+25,myY+35,10,10);
 		}
 		else if (dotNumber == 3)
 		{
-			fill(255,255,255);
+			fill(int(random(256)), int(random(256)), int(random(256)));
 			ellipse(myX+15,myY+15,10,10);
 			ellipse(myX+25,myY+25,10,10);
 			ellipse(myX+35,myY+35,10,10);
 		}
 		else if (dotNumber == 4)
 		{
-			fill(255,255,255);
+			fill(int(random(256)), int(random(256)), int(random(256)));
 			ellipse(myX+15,myY+15,10,10);
 			ellipse(myX+15,myY+35,10,10);
 			ellipse(myX+35,myY+15,10,10);
@@ -82,7 +82,7 @@ class Die //models one single dice cube
 		}
 		else if (dotNumber == 5)
 		{
-			fill(255,255,255);
+			fill(int(random(256)), int(random(256)), int(random(256)));
 			ellipse(myX+14,myY+15,10,10);
 			ellipse(myX+37,myY+15,10,10);
 			ellipse(myX+25,myY+25,10,10);
@@ -91,7 +91,7 @@ class Die //models one single dice cube
 		}
 		else if (dotNumber == 6)
 		{
-			fill(255,255,255);
+			fill(int(random(256)), int(random(256)), int(random(256)));
 			ellipse(myX+14,myY+13,10,10);
 			ellipse(myX+14,myY+25,10,10);
 			ellipse(myX+14,myY+37,10,10);
